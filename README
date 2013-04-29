@@ -1,0 +1,12 @@
+    用户排名：
+    两个数据表：
+        UserRank
+        UserCount
+    
+    useRank.sql 数据库脚本 建立两个表格
+    initRank.py 当数据库已经有用户得分数据 但是没有统计数量数据的时候调用脚本
+    UserRank.py 实际操作的函数
+    flaskEntery.py web接口
+    TestRank.py 测试web接口的脚本
+    
+    最好将排名做成一个单独的web服务，防止多个进程同时修改UserCount 数据表造成数据混乱
