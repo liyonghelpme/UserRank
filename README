@@ -10,3 +10,15 @@
     TestRank.py 测试web接口的脚本
     
     最好将排名做成一个单独的web服务，防止多个进程同时修改UserCount 数据表造成数据混乱
+
+
+
+接口样例：
+    得到前50名 getRange?start=0&end=50  返回[{uid:, score:}]
+    显示相邻的10名  
+        首先根据自己得分得到自己的排名 getRank?score=50
+        得到前一位排名 到后8位排名的用户(可能存在相同积分，相同排名的用户)  getRange?start=xxx&end=xxx
+
+    更改积分书信排名:
+        updateScore?uid=%d&newScore=%d
+        该接口自动更新用户的数据库积分
